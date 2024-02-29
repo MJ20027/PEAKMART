@@ -13,7 +13,7 @@ Admin Role
 You can checkout by using Card payment
 
 
- You can check Images of Website look 
+ You can check Images and video of Website
  https://docs.google.com/document/d/1oGYJ7Iiu5jIgFw7hJxaWRYg45mV00jvN2kNio5sdgUo/edit?usp=sharing
 
 
