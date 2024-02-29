@@ -2,7 +2,7 @@
 Description
   This is a e commerce website
  User Role : 
- - User can Order , comment on products
+ - User can Order , give review on products
  - User can Bookmark multiple products
 
 Admin Role
