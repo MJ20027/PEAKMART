@@ -2,8 +2,10 @@
 Description
   This is a e commerce website
  User Role : 
- - User can Order , give review on products
+ - User can Order products
+ - User can write review on products
  - User can Bookmark multiple products
+ - Payment using Card 
 
 Admin Role
  - Admin can list product
@@ -13,7 +15,14 @@ Admin Role
 You can checkout by using Card payment
 
 
- You can check Images and video of Website
+ You can check Images of Website
  https://docs.google.com/document/d/1oGYJ7Iiu5jIgFw7hJxaWRYg45mV00jvN2kNio5sdgUo/edit?usp=sharing
+
+Demo of User Interface
+https://youtu.be/Y9NBnsBqiP0
+
+Demo of Admin Interface
+https://youtu.be/8MrTxFcaTMo
+ 
 
 
