@@ -1,4 +1,4 @@
-**Course Selling App **
+**Product Selling App **
 Description
   This is a e commerce website
  User Role : 
