@@ -9,7 +9,7 @@
 Admin Role
  - Admin can list product
  - Admin can create category and create product
- - Admin can see set different order status like , delivered , cancelled , shipped etc
+ - Admin can see set different order status like delivered , cancelled , shipped etc
 
 You can checkout by using Card payment
 
