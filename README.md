@@ -1,6 +1,5 @@
 **Product Selling App **
-Description
-  This is a e commerce website
+
  User Role : 
  - User can Order products
  - User can write review on products
