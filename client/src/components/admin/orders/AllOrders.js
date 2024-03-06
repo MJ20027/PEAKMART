@@ -148,12 +148,12 @@ const CategoryTable = ({ order, editOrder }) => {
           {order.allProduct.map((product, i) => {
             return (
               <span className="block flex items-center space-x-2" key={i}>
-                {/* <img
+                <img
                   className="w-8 h-8 object-cover object-center"
-                  src={`${apiURL}/uploads/products/${product.id.pImages[0]}`}
+                  src={`${apiURL}/uploads/products/${product.id && product.id.pImages[0]}`}
                   alt="productImage"
-                /> */}
-                {/* <span>{product.id.pName}</span> */}
+                />
+                <span>{product.id && product.id.pName}</span>
                 <span>{product.quantitiy}x</span>
               </span>
             );
@@ -201,9 +201,6 @@ const CategoryTable = ({ order, editOrder }) => {
         <td className="hover:bg-gray-200 p-2 text-center">
           {moment(order.createdAt).format("lll")}
         </td>
-        {/* <td className="hover:bg-gray-200 p-2 text-center">
-          {moment(order.updatedAt).format("lll")}
-        </td> */}
         <td className="p-2 flex items-center justify-center">
           <span
             onClick={(e) => editOrder(order._id, true, order.status)}

@@ -11,7 +11,6 @@ const HomeComponent = () => {
   return (
     <Fragment>
       <Slider/>
-      {/* Category, Search & Filter Section */}
       <section className=" px-5 m-4 md:mx-8 md:my-6">
         <ProductCategory />
       </section>

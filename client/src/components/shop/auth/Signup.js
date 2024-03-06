@@ -1,9 +1,5 @@
 import React, { Fragment, useState } from "react";
 import { signupReq } from "./fetchApi";
-  // import React from "react";
-
-// import { toast } from "react-toastify";
-  // import "react-toastify/dist/ReactToastify.css";
 const Signup = (props) => {
   const [data, setData] = useState({
     name: "",
@@ -70,7 +66,6 @@ const Signup = (props) => {
         <div className="flex flex-col">
           <label htmlFor="name">
             Name :
-            {/* <span className="text-sm text-gray-600 ml-1">*</span> */}
           </label>
           <input
             onChange={(e) =>
@@ -93,7 +88,6 @@ const Signup = (props) => {
         <div className="flex flex-col">
           <label htmlFor="email">
             Email :
-            {/* <span className="text-sm text-gray-600 ml-1">*</span> */}
           </label>
           <input
             onChange={(e) =>
@@ -116,7 +110,6 @@ const Signup = (props) => {
         <div className="flex flex-col">
           <label htmlFor="password">
             Password :
-            {/* <span className="text-sm text-gray-600 ml-1">*</span> */}
           </label>
           <input
             onChange={(e) =>
@@ -139,7 +132,6 @@ const Signup = (props) => {
         <div className="flex flex-col">
           <label htmlFor="cPassword">
             Confirm Password :
-            {/* <span className="text-sm text-gray-600 ml-1">*</span> */}
           </label>
           <input
             onChange={(e) =>
@@ -159,21 +151,7 @@ const Signup = (props) => {
           />
           {!data.error ? "" : alert(data.error.cPassword, "red")}
         </div>
-        {/* <div className="flex flex-col space-y-2 md:flex-row md:justify-between md:items-center">
-          <div>
-            <input
-              type="checkbox"
-              id="rememberMe"
-              className="px-4 py-2 focus:outline-none border mr-1"
-            />
-            <label htmlFor="rememberMe">
-              Remember me<span className="text-sm text-gray-600">*</span>
-            </label>
-          </div>
-          <a className="block text-gray-600" href="/">
-            Lost your password?
-          </a>
-        </div> */}
+        
         <div
           onClick={(e) => formSubmit()}
           style={{ background: "#303031" }}

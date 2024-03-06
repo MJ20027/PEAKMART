@@ -26,14 +26,12 @@ const LoginSignup = (props) => {
 
   return (
     <Fragment>
-      {/* Black Overlay  */}
       <div
         onClick={(e) => loginSignupModalToggle()}
         className={` ${
           data.loginSignupModal ? "" : "hidden"
         } fixed top-0 z-40 w-full h-screen bg-black opacity-50 cursor-pointer`}
       ></div>
-      {/* Signup Login Component Render */}
       <section
         className={` ${
           data.loginSignupModal ? "" : "hidden"
@@ -41,11 +39,7 @@ const LoginSignup = (props) => {
       >
         <div className="w-11/12 md:w-3/5 lg:w-2/4 relative space-y-4 bg-white p-6 md:px-12 md:py-6">
           {login ? <Login /> : <Signup />}
-          {/* <div className="flex items-center space-x-2">
-            <span className="border-b border-gray-500 w-full" />
-            <span className="font-medium">or</span>
-            <span className="border-b border-gray-500 w-full" />
-          </div> */}
+          
           <div
             onClick={(e) => changeLoginSignup()}
             style={{ color: "#303031", border: "1px solid #303031" }}
@@ -53,7 +47,6 @@ const LoginSignup = (props) => {
           >
             {loginValue}
           </div>
-          {/*  Modal Close Button */}
           <div className="absolute top-0 right-0 mx-4">
             <svg
               onClick={(e) => {

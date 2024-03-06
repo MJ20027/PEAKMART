@@ -14,7 +14,7 @@ const AddProductDetail = ({ categories }) => {
     pName: "",
     pDescription: "",
     pStatus: "Active",
-    pImage: null, // Initial value will be null or empty array
+    pImage: null, 
     pCategory: "",
     pPrice: "",
     pOffer: 0,

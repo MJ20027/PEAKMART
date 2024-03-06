@@ -4,7 +4,6 @@ const path = require("path");
 const { redis } = require("../config/redis");
 
 class Product {
-  // Delete Image from uploads -> products folder
   static deleteImages(images, mode) {
     var basePath =
       path.resolve(__dirname + "../../") + "/public/uploads/products/";
@@ -28,28 +27,6 @@ class Product {
     }
   }
 
-  // async getAllProduct(req, res) {
-  //   try {
-  //     let cashedvalue = await redis.get('allProductsInMenu')
-  //     if (cashedvalue) {
-  //       console.log(cashedvalue);
-  //       const parsedCachedValue = JSON.parse(cachedValue);
-  //       return res.json({ parsedCachedValue });
-  //     }
-
-  //     let Products = await productModel
-  //       .find({})
-  //       .populate("pCategory", "_id cName")
-  //       .sort({ _id: -1 });
-  //     if (Products) {
-  //       await redis.set('allProductsInMenu',JSON.stringify(Products));
-  //       return res.json({ Products });
-  //     }
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
-
   async getAllProduct(req, res) {
     try {
       const cachedValue = await redis.get("allProductsInMenu");
@@ -58,7 +35,6 @@ class Product {
         const parsedCachedValue = JSON.parse(cachedValue);
         return res.json({ Products: parsedCachedValue });
       }
-      // console.log("reacheed herer")
       let Products = await productModel
         .find({})
         .populate("pCategory", "_id cName")
@@ -81,7 +57,6 @@ class Product {
     let { pName, pDescription, pPrice, pQuantity, pCategory, pOffer, pStatus } =
       req.body;
     let images = req.files;
-    // Validation
     if (
       !pName |
       !pDescription |
@@ -94,14 +69,12 @@ class Product {
       Product.deleteImages(images, "file");
       return res.json({ error: "All filled must be required" });
     }
-    // Validate Name and description
     else if (pName.length > 255 || pDescription.length > 3000) {
       Product.deleteImages(images, "file");
       return res.json({
         error: "Name 255 & Description must not be 3000 charecter long",
       });
     }
-    // Validate Images
     else if (images.length !== 2) {
       Product.deleteImages(images, "file");
       return res.json({ error: "Must need to provide 2 images" });
@@ -145,7 +118,6 @@ class Product {
     } = req.body;
     let editImages = req.files;
 
-    // Validate other fileds
     if (
       !pId |
       !pName |
@@ -158,13 +130,11 @@ class Product {
     ) {
       return res.json({ error: "All filled must be required" });
     }
-    // Validate Name and description
     else if (pName.length > 255 || pDescription.length > 3000) {
       return res.json({
         error: "Too long discription",
       });
     }
-    // Validate Update Images
     else if (editImages && editImages.length == 1) {
       Product.deleteImages(editImages, "file");
       return res.json({ error: "Must need to provide 2 images" });
@@ -208,7 +178,6 @@ class Product {
         let deleteProductObj = await productModel.findById(pId);
         let deleteProduct = await productModel.findByIdAndDelete(pId);
         if (deleteProduct) {
-          // Delete Image from uploads -> products folder
           Product.deleteImages(deleteProductObj.pImages, "string");
           return res.json({ success: "Product deleted successfully" });
         }

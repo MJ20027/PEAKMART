@@ -124,9 +124,7 @@ const CartModal = () => {
                               </span>{" "}
                               Rs {subTotal(item._id, item.pPrice)}
                             </div>{" "}
-                            {/* SUbtotal Count */}
                           </div>
-                          {/* Cart Product Remove Button */}
                           <div
                             onClick={(e) => removeCartProduct(item._id)}
                             className="absolute top-0 right-0 text-white"
@@ -164,12 +162,6 @@ const CartModal = () => {
     {"display": "flex",
     "justify-content": "center"}
 } className="m-4 space-y-4	">
-            {/* <div
-              onClick={(e) => cartModalOpen()}
-              className="cursor-pointer px-4 py-2 border border-gray-400 text-white text-center cursor-pointer"
-            >
-              Continue shopping
-            </div> */}
             {data.cartTotalCost ? (
               <Fragment>
                 {isAuthenticate() ? (

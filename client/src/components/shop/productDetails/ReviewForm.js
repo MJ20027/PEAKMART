@@ -61,7 +61,6 @@ const ReviewForm = (props) => {
             <span className="text-2xl font-medium">Add a review</span>
 
           </div>
-          {/* Input Rating */}
           <div className="mb-4">
             <fieldset
               onChange={(e) => setFdata({ ...fData, rating: e.target.value })}

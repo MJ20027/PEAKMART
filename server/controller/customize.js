@@ -46,7 +46,6 @@ class Customize {
 
         let deleteImage = await customizeModel.findByIdAndDelete(id);
         if (deleteImage) {
-          // Delete Image from uploads -> customizes folder
           fs.unlink(filePath, (err) => {
             if (err) {
               console.log(err);

@@ -17,7 +17,6 @@ const TableHeader = () => {
           <th className="px-4 py-2 border">Address</th>
           <th className="px-4 py-2 border">Transaction Id</th>
           <th className="px-4 py-2 border">Checkout</th>
-          {/* <th className="px-4 py-2 border">Processing</th> */}
           
         </tr>
       </thead>
@@ -35,10 +34,11 @@ const TableBody = ({ order }) => {
               <span className="w-64 block flex items-center space-x-3" key={i}>
                 <img
                   className="w-10 h-10 object-cover object-center"
-                  src={`${apiURL}/uploads/products/${product.id.pImages[0]}`}
+                  src={`${apiURL}/uploads/products/${ product.id  && product.id.pImages[0]}`}
                   alt="productImage"
                 />
-                <span>{product.id.pName}</span>
+                
+                <span>{product.id && product.id.pName}</span>
                 <span className="px-2">x{product.quantitiy}</span>
               </span>
             );
@@ -80,9 +80,6 @@ const TableBody = ({ order }) => {
         <td className="hover:bg-gray-200 p-2 text-center">
           {moment(order.createdAt).format("lll")}
         </td>
-        {/* <td className="hover:bg-gray-200 p-2 text-center">
-          {moment(order.updatedAt).format("lll")}
-        </td> */}
       </tr>
     </Fragment>
   );

@@ -31,7 +31,6 @@ const CategoryMenu = (props) => {
               />
             </svg>
             Add 
-            {/* Category */}
           </div>
         </div>
         <AddCategoryModal />

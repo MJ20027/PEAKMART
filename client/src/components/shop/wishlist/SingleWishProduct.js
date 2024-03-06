@@ -1,7 +1,6 @@
 import React, { Fragment, useContext, useEffect, useReducer, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { wishListProducts } from "./FetchApi";
-import { DashboardUserContext } from "../dashboardUser/Layout";
 const apiURL = process.env.REACT_APP_API_URL;
 
 const Product = () => {
@@ -16,7 +15,6 @@ const Product = () => {
   const fetchData = async () => {
     setLoading(true);
     let responseData = await wishListProducts();
-    // fData.id;
     setTimeout(() => {
       if (responseData && responseData.Products) {
         setProducts(responseData.Products);
@@ -88,19 +86,7 @@ const Product = () => {
                   </div>
                 </div>
                 <div className="absolute top-0 right-0 mx-2 my-2 md:relative">
-                  {/* <svg
-                    onClick={(e) => removeFromWishList(product._id)}
-                    className="w-6 h-6 cursor-pointer"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg> */}
+
 
                   <svg
                     onClick={(e) => removeFromWishList(product._id)}
@@ -131,34 +117,15 @@ const Product = () => {
 
 const SingleWishProduct = (props) => {
 
-  // const { data, dispatch } = useContext(DashboardUserContext);
-  // const userDetails = data.userDetails !== null ? data.userDetails : "";
-
-  // const [fData, setFdata] = useState({
-  //   id: "",
-  // });
-
-  // useEffect(() => {
-  //   setFdata({
-  //     ...fData,
-  //     id: userDetails._id,
-  //   });
-
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [userDetails]);
-
   return (
     <Fragment>
-      {/* <DashboardUserContext.Provider> */}
         <section className="mx-4 mt-20 md:mx-12 md:mt-32 lg:mt-24">
           <hr />
           <div className="text-2xl flex justify-around">
             <b>BOOKMARKS</b>
           </div>
-          {/* Product List */}
           <Product />
         </section>
-      {/* </DashboardUserContext.Provider> */}
     </Fragment>
   );
 };

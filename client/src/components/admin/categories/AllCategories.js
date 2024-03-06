@@ -131,7 +131,6 @@ const AllCategory = (props) => {
               <th className="px-4 py-2 border">Image</th>
               <th className="px-4 py-2 border">Status</th>
               <th className="px-4 py-2 border">Created at</th>
-              {/* <th className="px-4 py-2 border">Updated at</th> */}
               <th className="px-4 py-2 border">Actions</th>
             </tr>
           </thead>
@@ -169,7 +168,6 @@ const AllCategory = (props) => {
   );
 };
 
-/* Single Category Component */
 const CategoryTable = ({ category, deleteCat, editCat }) => {
   return (
     <Fragment>
@@ -207,9 +205,7 @@ const CategoryTable = ({ category, deleteCat, editCat }) => {
         <td className="p-2 text-center">
           {moment(category.createdAt).format("lll")}
         </td>
-        {/* <td className="p-2 text-center">
-          {moment(category.updatedAt).format("lll")}
-        </td> */}
+
         <td className="p-2 flex items-center justify-center">
           <span
             onClick={(e) =>

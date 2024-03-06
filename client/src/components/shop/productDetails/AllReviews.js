@@ -52,11 +52,7 @@ const AllReviews = (props) => {
             return (
               <Fragment key={index}>
                 <div className="mb-6 md:mb-8 flex flex-col md:flex-row md:items-start">
-                  {/* <img
-                    className="mx-2 w-16 h-16 rounded-full"
-                    src="https://secure.gravatar.com/avatar/676d90a1574e9d3ebf98dd36f7adad60?s=60&d=mm&r=g"
-                    alt="pic"
-                  /> */}
+
                   <svg
                     className="mx-2 w-12 h-12 "
                     xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +75,6 @@ const AllReviews = (props) => {
                     </div>
                     <div className="flex flex-col">
                       <div className="flex">
-                        {/* Yellow Star */}
                         {[...Array(Number(item.rating))].map((index) => {
                           return (
                             <span key={index}>
@@ -94,7 +89,7 @@ const AllReviews = (props) => {
                             </span>
                           );
                         })}
-                        {/* White Star */}
+                        {/* Star */}
                         {[...Array(5 - Number(item.rating))].map((index) => {
                           return (
                             <span key={index}>

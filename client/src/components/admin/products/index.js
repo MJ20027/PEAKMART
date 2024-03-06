@@ -17,7 +17,6 @@ const ProductComponent = () => {
 };
 
 const Products = (props) => {
-  /* To use useReducer make sure that reducer is the first arg */
   const [data, dispatch] = useReducer(productReducer, productState);
 
   return (

@@ -11,7 +11,6 @@ const DashboardComponent = () => {
   return (
     <Fragment>
       <DashboardCard />
-      <Customize />
       <TodaySell />
     </Fragment>
   );

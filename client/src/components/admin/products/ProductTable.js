@@ -134,7 +134,6 @@ const AllProduct = (props) => {
               <th className="px-4 py-2 border">Category</th>
               <th className="px-4 py-2 border">Offer</th>
               <th className="px-4 py-2 border">Created at</th>
-              {/* <th className="px-4 py-2 border">Updated at</th> */}
               <th className="px-4 py-2 border">Actions</th>
             </tr>
           </thead>
@@ -209,9 +208,6 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
         <td className="p-2 text-center">
           {moment(product.createdAt).format("lll")}
         </td>
-        {/* <td className="p-2 text-center">
-          {moment(product.updatedAt).format("lll")}
-        </td> */}
         <td className="p-2 flex items-center justify-center">
           <span
             onClick={(e) => editProduct(product._id, product, true)}

@@ -19,18 +19,17 @@ const ProductDetailsSection = (props) => {
 
   const { data, dispatch } = useContext(ProductDetailsContext);
   const { data: layoutData, dispatch: layoutDispatch } =
-    useContext(LayoutContext); // Layout Context
+    useContext(LayoutContext); 
 
   const sProduct = layoutData.singleProductDetail;
   const [pImages, setPimages] = useState(null);
-  const [count, setCount] = useState(0); // Slide change state
+  const [count, setCount] = useState(0); 
 
-  const [quantitiy, setQuantitiy] = useState(1); // Increse and decrese quantity state
-  const [, setAlertq] = useState(false); // Alert when quantity greater than stock
-
+  const [quantitiy, setQuantitiy] = useState(1); 
+  const [, setAlertq] = useState(false); 
   const [wList, setWlist] = useState(
     JSON.parse(localStorage.getItem("wishList"))
-  ); // Wishlist State Control
+  );
 
   useEffect(() => {
     fetchData();
@@ -46,7 +45,7 @@ const ProductDetailsSection = (props) => {
           layoutDispatch({
             type: "singleProductDetail",
             payload: responseData.Product,
-          }); // Dispatch in layout context
+          });
           setPimages(responseData.Product.pImages);
           dispatch({ type: "loading", payload: false });
           layoutDispatch({ type: "inCart", payload: cartList() }); // This function change cart in cart state
@@ -58,7 +57,7 @@ const ProductDetailsSection = (props) => {
     } catch (error) {
       console.log(error);
     }
-    fetchCartProduct(); // Updating cart total
+    fetchCartProduct();
   };
 
   const fetchCartProduct = async () => {
@@ -154,29 +153,8 @@ const ProductDetailsSection = (props) => {
       />
 
       <section className="m-4 md:mx-12 md:my-6">
-        <div className="grid grid-cols-2 md:grid-cols-11">
-          {/* <div className="hidden md:block md:col-span-1 md:flex md:flex-col md:space-y-4 md:mr-2">
-            <img
-              onClick={(e) =>
-                slideImage("increase", 0, count, setCount, pImages)
-              }
-              className={`${
-                count === 0 ? "" : "opacity-25"
-              } cursor-pointer w-20 h-20 object-cover object-center`}
-              src={`${apiURL}/uploads/products/${sProduct.pImages[0]}`}
-              alt="pic"
-            />
-            <img
-              onClick={(e) =>
-                slideImage("increase", 1, count, setCount, pImages)
-              }
-              className={`${
-                count === 1 ? "" : "opacity-25"
-              } cursor-pointer w-20 h-20 object-cover object-center`}
-              src={`${apiURL}/uploads/products/${sProduct.pImages[1]}`}
-              alt="pic"
-            />
-          </div> */}
+        <div className="grid grid-cols-2 md:grid-cols-11" style={{"padding" : "4rem"}}>
+    
           <div className="col-span-2 md:col-span-7">
             <div className="relative">
               <img
@@ -313,19 +291,7 @@ const ProductDetailsSection = (props) => {
                             )
                           }
                         >
-                          {/*  */}
-                          {/* <svg
-                            className="w-5 h-5 fill-current cursor-pointer"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                              clipRule="evenodd"
-                            />
-                          </svg> */}
+
                           <svg
                             style={{
                               color: "white",
@@ -336,8 +302,6 @@ const ProductDetailsSection = (props) => {
                           >
                             <path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" />
                           </svg>
-
-                          {/*  */}
                         </span>
                         <span className="font-semibold">{quantitiy}</span>
                         <span
@@ -434,12 +398,9 @@ const ProductDetailsSection = (props) => {
                     </span>
                   </div>
                 )}
-                {/* Quantity Button End */}
               </div>
-              {/* Incart and out of stock button */}
               {sProduct.pQuantity !== 0 ? (
                 <Fragment>
-                  {/* <button></button> */}
 
                   {layoutData.inCart !== null &&
                   layoutData.inCart.includes(sProduct._id) === true ? (
@@ -459,7 +420,6 @@ const ProductDetailsSection = (props) => {
                     </div>
                   ) : (
                     <div
-                      // style={{ background: "#303031" }}
                       className={`px-4 py-2 text-center  uppercase`}
                     >
                       <button
@@ -510,12 +470,10 @@ const ProductDetailsSection = (props) => {
                   )}
                 </Fragment>
               )}
-              {/* Incart and out of stock button End */}
             </div>
           </div>
         </div>
       </section>
-      {/* Product Details Section two */}
       <ProductDetailsSectionTwo />
     </Fragment>
   );

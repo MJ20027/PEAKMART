@@ -135,9 +135,7 @@ const ProfileComponent = () => {
                 id="email"
                 className="cursor-not-allowed border px-4 py-2 bg-gray-200 w-full focus:outline-none focus:cursor-not-allowed"
               />
-              {/* <span className="text-xs text-gray-500">
-                You can't change your email
-              </span> */}
+
             </div>
             <div className="flex flex-col space-y-2">
               <label htmlFor="number">Phone Number</label>
