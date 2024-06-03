@@ -1,23 +1,23 @@
 {
-  "name": "Hayroo",
+  "name": "peakmart",
   "version": "1.0.0",
-  "description": "A E-commerce website.",
+  "description": "E-commerce website.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "nodemon app.js"
+    "start": "node app.js",
+    "start-dev": "nodemon app.js",
+    "build": "npm i",
+    "test": "echo \"Error: no test specified\" && exit 1"
 
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hasan-py/MERN_Stack_Project_Hayroo_Ecommerce"
+    "url": ""
   },
-  "author": "Hasan",
+  "author": "peakmart",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hasan-py/MERN_Stack_Project_Hayroo_Ecommerce/issues"
-  },
-  "homepage": "https://github.com/hasan-py/MERN_Stack_Project_Hayroo_Ecommerce#readme",
+
+
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "braintree": "^3.0.0",
