@@ -53,7 +53,7 @@ app.use("/api/order", orderRouter);
 app.use("/api/customize", customizeRouter);
 app.use("/api/wishlist", bookmarkRouter);
 
-const PORT =8000;
+const PORT =process.env.PORT;
 app.listen(PORT, () => {
   connectDB();
   console.log("Server is running on ", PORT);
