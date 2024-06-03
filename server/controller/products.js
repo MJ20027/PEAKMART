@@ -1,7 +1,7 @@
 const productModel = require("../models/products");
 const fs = require("fs");
 const path = require("path");
-const { redis } = require("../config/redis");
+// const { redis } = require("../config/redis");
 
 class Product {
   static deleteImages(images, mode) {
@@ -41,7 +41,7 @@ class Product {
         .sort({ _id: -1 });
 
       if (Products) {
-        await redis.set("allProductsInMenu", JSON.stringify(Products));
+        // await redis.set("allProductsInMenu", JSON.stringify(Products));
         return res.json({ Products: Products });
       } else {
         return res.json({ error: "No products found" });
@@ -169,7 +169,7 @@ class Product {
   }
 
   async getDeleteProduct(req, res) {
-     const cachedValue = await redis.del("allProductsInMenu");
+    //  const cachedValue = await redis.del("allProductsInMenu");
     let { pId } = req.body;
     if (!pId) {
       return res.json({ error: "All filled must be required" });
