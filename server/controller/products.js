@@ -29,12 +29,12 @@ class Product {
 
   async getAllProduct(req, res) {
     try {
-      const cachedValue = await redis.get("allProductsInMenu");
-      if (cachedValue) {
-        console.log(cachedValue);
-        const parsedCachedValue = JSON.parse(cachedValue);
-        return res.json({ Products: parsedCachedValue });
-      }
+      // const cachedValue = await redis.get("allProductsInMenu");
+      // if (cachedValue) {
+      //   console.log(cachedValue);
+      //   const parsedCachedValue = JSON.parse(cachedValue);
+      //   return res.json({ Products: parsedCachedValue });
+      // }
       let Products = await productModel
         .find({})
         .populate("pCategory", "_id cName")
@@ -53,7 +53,7 @@ class Product {
   }
 
   async postAddProduct(req, res) {
-    const cachedValue = await redis.del("allProductsInMenu");
+    // const cachedValue = await redis.del("allProductsInMenu");
     let { pName, pDescription, pPrice, pQuantity, pCategory, pOffer, pStatus } =
       req.body;
     let images = req.files;
